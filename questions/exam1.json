@@ -1,0 +1,2980 @@
+[
+  {
+    "id": 1,
+    "source_question_number": 91,
+    "question": "Refer to the exhibit.\n\nA Mule event is composed of a hierarchy of objects.\nWhere in the hierarchy are variables stored?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Mule message attributes"
+      },
+      {
+        "label": "B",
+        "text": "Mule message"
+      },
+      {
+        "label": "C",
+        "text": "Mule message payload"
+      },
+      {
+        "label": "D",
+        "text": "Mule event"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 2,
+    "source_question_number": 88,
+    "question": "Refer to the exhibits.\n\nThe expression for the Choice router needs to be written.\nWhat is a valid expression to route Mule events to the non-default flow?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "#[ ‘MuleSoft’ == payload.’company’ ]"
+      },
+      {
+        "label": "B",
+        "text": "#[ if ( ‘MuleSoft’ == payload.company ) ]"
+      },
+      {
+        "label": "C",
+        "text": "#[ company = “MuleSoft” ]"
+      },
+      {
+        "label": "D",
+        "text": "#[ if( company = “MuleSoft” ) ]"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 3,
+    "source_question_number": 87,
+    "question": "Refer to the exhibit.\n\nThe input array of strings is passed to the batch job, which does NOT do any filtering or aggregating.\nWhat payload is logged by the Logger component?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Summary report of processed records"
+      },
+      {
+        "label": "B",
+        "text": "[ “Apple”, “Banana” ]"
+      },
+      {
+        "label": "C",
+        "text": "[ “Apple12”, “Banana12” ]"
+      },
+      {
+        "label": "D",
+        "text": "[ “Apple1”, “Banana1”, 2 ]"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 4,
+    "source_question_number": 79,
+    "question": "To avoid hard-coding values, a flow uses some property placeholders and the corresponding values are stored in a configuration file.\nWhere does the configuration file’s location need to be specified in the Mule application?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "A global element"
+      },
+      {
+        "label": "B",
+        "text": "The mule-artifact.json file"
+      },
+      {
+        "label": "C",
+        "text": "A flow attribute"
+      },
+      {
+        "label": "D",
+        "text": "The pom.xml file"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 5,
+    "source_question_number": 78,
+    "question": "Refer to the exhibits.\n\nThis Mule application has an HTTP Request that is configured with hardcoded values. To change this, the Mule application is configured to use a properties file named config.yaml.\nWhat valid expression can the HTTP Request host value be set to so that it is no longer hardcoded?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "${training:host}"
+      },
+      {
+        "label": "B",
+        "text": "#[training.host]"
+      },
+      {
+        "label": "C",
+        "text": "${training.host}"
+      },
+      {
+        "label": "D",
+        "text": "#[training.host]"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 6,
+    "source_question_number": 77,
+    "question": "Refer to the exhibit.\n\nThis RAML specification includes a resource and method to retrieve accounts by account_type and industry.\nWhat is the correct URI to get all retail finance accounts?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "/accounts?account_type:retail&industry:finance"
+      },
+      {
+        "label": "B",
+        "text": "/accounts/retail/finance"
+      },
+      {
+        "label": "C",
+        "text": "/accounts/account_type=retail/industry=finance"
+      },
+      {
+        "label": "D",
+        "text": "/accounts?account_type=retail&industry=finance"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 7,
+    "source_question_number": 76,
+    "question": "An API implementation has been deployed to CloudHub and now needs to be governed. IT will not allocate additional vCores for a new Mule application to act as an API proxy.\nWhat is the next step to preserve the current vCore usage, but still allow the Mule application to be managed by API Manager?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Modify the API implementation to use auto-discovery to register with API Manager"
+      },
+      {
+        "label": "B",
+        "text": "Deploy the same API implementation behind a VPC and configure the VPC to connect to API Manager"
+      },
+      {
+        "label": "C",
+        "text": "Upload the Mule application’s JAR file to the API instance in API Manager"
+      },
+      {
+        "label": "D",
+        "text": "Register the same API implementation in Runtime Manager to connect to API Manager"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 8,
+    "source_question_number": 56,
+    "question": "What does the zip operator do in DataWeave?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Minifies the size of value using encoding."
+      },
+      {
+        "label": "B",
+        "text": "None of these."
+      },
+      {
+        "label": "C",
+        "text": "Merges elements of two objects into a single object."
+      },
+      {
+        "label": "D",
+        "text": "Merges elements of two lists (arrays) into a single list."
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 9,
+    "source_question_number": 154,
+    "question": "Refer to the exhibits. The webClient flow sends requests to the mockServer flow’s HTTP Listener.\n\nAn HTTP:METHOD_NOT_ALLOWED error is thrown each time the webClient flow executes.\n\nWhat attribute value must be changed in the webClient flow’s HTTP Request operation to prevent this error from being thrown?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Change the protocol attribute’s value to “HTTPS”"
+      },
+      {
+        "label": "B",
+        "text": "Change the method attribute’s value to"
+      },
+      {
+        "label": "C",
+        "text": "Change the path attribute’s value to “/api/partners/fastShipping”"
+      },
+      {
+        "label": "D",
+        "text": "Change the method attribute’s value to “POST”"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 10,
+    "source_question_number": 145,
+    "question": "A shopping API contains a method to look up store details by department.\n\nTo get information for a particular store, web clients will submit requests with a query parameter named department and a URI parameter named storeId.\n\nWhat is a valid RAML snippet that supports requests from web clients to get data for a specific storeId and department name?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "/department:\nget:\nuriParameter:\nstoreId:"
+      },
+      {
+        "label": "B",
+        "text": "get:\nuriParameter:\n{storeId}:\nqueryParameters:\ndepartment:"
+      },
+      {
+        "label": "C",
+        "text": "/{storedId}:\nget:\nqueryParameters:\ndepartment:"
+      },
+      {
+        "label": "D",
+        "text": "get:\nqueryParameters:\ndepartment:\nuriParameter:\nstoreId:"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 11,
+    "source_question_number": 136,
+    "question": "Refer to the exhibits. The main flow contains a Flow Reference component configured to call the child flow.",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The payload and all attributes"
+      },
+      {
+        "label": "B",
+        "text": "The payload and all variables"
+      },
+      {
+        "label": "C",
+        "text": "The entire Mule event"
+      },
+      {
+        "label": "D",
+        "text": "The payload"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 12,
+    "source_question_number": 125,
+    "question": "Refer to the exhibits. The Set Payload transformer sets the payload to an object. The Logger component’s message attribute is configured with the string ‘Result #[INFO” ++ payload]’.\n\nWhat is logged when the flow executes?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "ERROR … “You called the function ‘++’ with these arguments:\n1: String (“INFO”)\n2: Object ({one: (child1: “Name1” as String {class: “java.lang.String”},child2: “Name2” …)\n…"
+      },
+      {
+        "label": "B",
+        "text": "ERROR: You evaluated an inline expression ‘#’ without ++"
+      },
+      {
+        "label": "C",
+        "text": "Result: INFO { \\”one\\”: { \\”child1\\”: \\”Name1\\”, \\”child2\\”: \\”Name2\\” }"
+      },
+      {
+        "label": "D",
+        "text": "Result: INFOpayload"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 13,
+    "source_question_number": 123,
+    "question": "Refer to the exhibits. A Mule application polls a database table.\n\nThis error is logged when the Mule application is run.\n\nWhat should be changed in the Database connector configuration to resolve this error?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Configure the correct JDBC driver"
+      },
+      {
+        "label": "B",
+        "text": "Configure the correct table name"
+      },
+      {
+        "label": "C",
+        "text": "Configure the correct host URL"
+      },
+      {
+        "label": "D",
+        "text": "Configure the correct database name"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 14,
+    "source_question_number": 117,
+    "question": "Refer to the exhibit.\n\nThe Database Select operation returns five rows from a database.\nWhat is logged by the Logger component?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“Array”"
+      },
+      {
+        "label": "B",
+        "text": "“Object”"
+      },
+      {
+        "label": "C",
+        "text": "“LinkedHashMap”"
+      },
+      {
+        "label": "D",
+        "text": "“CaseInsensitiveHashMap”"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 15,
+    "source_question_number": 115,
+    "question": "A web client submits a request to http://localhost:8081/books/0471767840. The value `0471767840` is captured by a Set Variable transformer to a variable named bookISBN.\nWhat is the DataWeave expression to access bookISBN later in the flow?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "attributes.bookISBN"
+      },
+      {
+        "label": "B",
+        "text": "flowVars.bookISBN"
+      },
+      {
+        "label": "C",
+        "text": "vars.bookISBN"
+      },
+      {
+        "label": "D",
+        "text": "bookISBN"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 16,
+    "source_question_number": 112,
+    "question": "In an application network, if the implementation but not the interface of a product API changes, what needs to be done to the other APIs that consume the product\nAPI?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The applications associated with the other APIs must be restarted"
+      },
+      {
+        "label": "B",
+        "text": "The other APIs must be updated to consume the updated product API"
+      },
+      {
+        "label": "C",
+        "text": "Nothing needs to be changed in the other APIs or their associated applications"
+      },
+      {
+        "label": "D",
+        "text": "The applications associated with the other APIs must be recoded"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 17,
+    "source_question_number": 108,
+    "question": "According to MuleSoft, what is the first step to create a Modern API?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Performance tune and optimize the backend systems and network"
+      },
+      {
+        "label": "B",
+        "text": "Create an API specification and get feedback from stakeholders"
+      },
+      {
+        "label": "C",
+        "text": "Create a prototype of the API implementation"
+      },
+      {
+        "label": "D",
+        "text": "Gather a list of requirements to secure the API"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 18,
+    "source_question_number": 106,
+    "question": "An SLA based policy has been enabled in API Manager.\nWhat is the next step to configure the API proxy to enforce the new SLA policy?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Restart the API proxy to clear the API policy cache"
+      },
+      {
+        "label": "B",
+        "text": "Add new property placeholders and redeploy the API proxy"
+      },
+      {
+        "label": "C",
+        "text": "Add required headers to the RAML specification and redeploy the new API proxy"
+      },
+      {
+        "label": "D",
+        "text": "Add new environment variables and restart the API proxy"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 19,
+    "source_question_number": 98,
+    "question": "What is the output type of the DataWeave map operator?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Object"
+      },
+      {
+        "label": "B",
+        "text": "Array"
+      },
+      {
+        "label": "C",
+        "text": "Map"
+      },
+      {
+        "label": "D",
+        "text": "String"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 20,
+    "source_question_number": 96,
+    "question": "Refer to the exhibit.\n\nHow many private flows does APIkit generate from the RAML specification?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "1"
+      },
+      {
+        "label": "B",
+        "text": "2"
+      },
+      {
+        "label": "C",
+        "text": "3"
+      },
+      {
+        "label": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 21,
+    "source_question_number": 93,
+    "question": "A Mule application contains a global error handler configured to catch any errors.\nWhere must the global error handler be specified so that the global error handler catches all errors from flows without their own error handlers?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "A global element"
+      },
+      {
+        "label": "B",
+        "text": "The pom.xml file"
+      },
+      {
+        "label": "C",
+        "text": "Nowhere, the global error handler is automatically used"
+      },
+      {
+        "label": "D",
+        "text": "A configuration properties file"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 22,
+    "source_question_number": 92,
+    "question": "A flow needs to combine and return data from two different data sources. It contains a Database SELECT operation followed by an HTTP Request operation.\nWhat is the method to capture both payloads so the payload from the second request does not overwrite that from the first?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Save the payload from the Database SELECT operation to a variable."
+      },
+      {
+        "label": "B",
+        "text": "Put the Database SELECT operation inside a Cache scope"
+      },
+      {
+        "label": "C",
+        "text": "Put the Database SELECT operation inside a Message Enricher scope"
+      },
+      {
+        "label": "D",
+        "text": "Nothing, previous payloads are combined into the next payload"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 23,
+    "source_question_number": 90,
+    "question": "An API specification is designed using RAML. What is the next step to create a REST Connector from this API specification?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Add the specification to a Mule project’s src/main/resources/api folder"
+      },
+      {
+        "label": "B",
+        "text": "Implement the API specification using flow designer in Design Center"
+      },
+      {
+        "label": "C",
+        "text": "Download the API specification and build the interface using APIkit"
+      },
+      {
+        "label": "D",
+        "text": "Publish the API specification to Anypoint Exchange"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 24,
+    "source_question_number": 85,
+    "question": "Refer to the exhibits.\n\nA web client sends a GET request that includes a destination query parameter to the flow’s HTTP Listener. The Web Service Consumer throws a\nWSC:BAD_REQUEST error.\nWhat is the next step to fix this error?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Set a header in the Consume operation equal to the destination query parameter"
+      },
+      {
+        "label": "B",
+        "text": "Set a SOAP payload before the Consume operation that contains the destination query parameter"
+      },
+      {
+        "label": "C",
+        "text": "Set a property in the Consume operation equal to the destination query parameter"
+      },
+      {
+        "label": "D",
+        "text": "Set a JSON payload before the Consume operation that contains the destination query parameter"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 25,
+    "source_question_number": 84,
+    "question": "Refer to the exhibit.\n\nThe Mule application is debugged in Anypoint Studio and stops at the breakpoint.\nWhat is the value of the payload displayed in the debugger at this breakpoint?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "0"
+      },
+      {
+        "label": "B",
+        "text": "“Processing”"
+      },
+      {
+        "label": "C",
+        "text": "“Start”"
+      },
+      {
+        "label": "D",
+        "text": "“Complete”"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 26,
+    "source_question_number": 74,
+    "question": "What execution model is used by For Each and Batch Job scopes?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Both are multi-threaded"
+      },
+      {
+        "label": "B",
+        "text": "Both are single-threaded"
+      },
+      {
+        "label": "C",
+        "text": "Batch Job is single-threaded and For Each is multi-threaded"
+      },
+      {
+        "label": "D",
+        "text": "For each is single-threaded and Batch Job is multi-threaded"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 27,
+    "source_question_number": 71,
+    "question": "Refer to the exhibits.\n\nThe Set Payload transformer’s value is set to {`˜year’: `˜2020′}.\nWhat message value should be added to the Logger component to output the message `˜The year is `˜2020′, without hardcoding 2020?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "‘The year is #[payload.year]’"
+      },
+      {
+        "label": "B",
+        "text": "‘#[The year is $(payload.year)]’"
+      },
+      {
+        "label": "C",
+        "text": "‘#[“The year is ++ payload.year”]’"
+      },
+      {
+        "label": "D",
+        "text": "‘#[“The year is ” + payload.year]’"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 28,
+    "source_question_number": 68,
+    "question": "Refer to the exhibit.\n\nIn the execution of the Scatter-Gather, the `sleep 1 sec` Flow Reference takes about 1 second to complete, and the `sleep 5 secs` Flow Reference takes about 5 seconds to complete.\nAbout how many seconds does it take from the time the Scatter-Gather is called until Set Payload transformer is called?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "0"
+      },
+      {
+        "label": "B",
+        "text": "1"
+      },
+      {
+        "label": "C",
+        "text": "5"
+      },
+      {
+        "label": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 29,
+    "source_question_number": 66,
+    "question": "A company has an API to manage purchase orders, with each record identified by a unique purchase order ID. The API was built with RAML according to\nMuleSoft best practices.\nWhat URI should a web client use to request order PO5555?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "/orders/{PO5555}"
+      },
+      {
+        "label": "B",
+        "text": "/orders/order=PO5555"
+      },
+      {
+        "label": "C",
+        "text": "/orders?order=PO5555"
+      },
+      {
+        "label": "D",
+        "text": "/orders/PO5555"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 30,
+    "source_question_number": 60,
+    "question": "Refer to the exhibit.\n\nThe error occurs when a project is run in Anypoint Studio. The project, which has a dependency that is not in the MuleSoft Maven repository, was created and successfully run on a different computer.\nWhat is the next step to fix the error to get the project to run successfully?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Ass the dependency to the MULE_HOME/bin folder"
+      },
+      {
+        "label": "B",
+        "text": "Edit the dependency in the Mule project’s pom.xml file"
+      },
+      {
+        "label": "C",
+        "text": "Deploy the dependency to MuleSoft’s Maven repository"
+      },
+      {
+        "label": "D",
+        "text": "Install the dependency to the computer’s local Maven repository"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 31,
+    "source_question_number": 52,
+    "question": "What is the minimum required configuration in a flow for a Mule application to compile?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "An event source"
+      },
+      {
+        "label": "B",
+        "text": "RAML file"
+      },
+      {
+        "label": "C",
+        "text": "An event processor"
+      },
+      {
+        "label": "D",
+        "text": "Logger Component"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 32,
+    "source_question_number": 51,
+    "question": "Where does a deployed flow designer application run in Anypoint Platform?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "CloudHub worker"
+      },
+      {
+        "label": "B",
+        "text": "API Manager"
+      },
+      {
+        "label": "C",
+        "text": "Design Center"
+      },
+      {
+        "label": "D",
+        "text": "Exchange"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 33,
+    "source_question_number": 49,
+    "question": "What MuleSoft API-led connectivity layer is intended to expose part of a backend database without business logic?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Data"
+      },
+      {
+        "label": "B",
+        "text": "System"
+      },
+      {
+        "label": "C",
+        "text": "Process"
+      },
+      {
+        "label": "D",
+        "text": "Experience"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 34,
+    "source_question_number": 45,
+    "question": "A Set Variable component saves the current payload to a variable.\nWhat is the DataWeave parent expression to access the variable?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "#[value]"
+      },
+      {
+        "label": "B",
+        "text": "#[vars]"
+      },
+      {
+        "label": "C",
+        "text": "#[var]"
+      },
+      {
+        "label": "D",
+        "text": "#[values]"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 35,
+    "source_question_number": 42,
+    "question": "What is the purpose of the api:router element in APIkit?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Serves as an API implementation."
+      },
+      {
+        "label": "B",
+        "text": "Validates requests against RAML API specifications and routes them to API implementations."
+      },
+      {
+        "label": "C",
+        "text": "Creates native connectors using a 3rd party Java library."
+      },
+      {
+        "label": "D",
+        "text": "Validates responses returned from API requests and routes them back to the caller."
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 36,
+    "source_question_number": 39,
+    "question": "What are the features of CloudHub Fabric?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Non-persistent queue"
+      },
+      {
+        "label": "B",
+        "text": "Horizontal Scaling"
+      },
+      {
+        "label": "C",
+        "text": "VPN Mock Services"
+      },
+      {
+        "label": "D",
+        "text": "None of these"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 37,
+    "source_question_number": 25,
+    "question": "What asset can NOT be created by using Design Center?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "API"
+      },
+      {
+        "label": "B",
+        "text": "API Portals"
+      },
+      {
+        "label": "C",
+        "text": "Mule Apps"
+      },
+      {
+        "label": "D",
+        "text": "API Fragments"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 38,
+    "source_question_number": 73,
+    "question": "Refer to the exhibits.\n\nA web client sends a POST request to the HTTP Listener and the Validation component in the Try scope throws an error.\nWhat response message is returned to the web client?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Validation Error"
+      },
+      {
+        "label": "B",
+        "text": "“END”"
+      },
+      {
+        "label": "C",
+        "text": "“ERROR1”"
+      },
+      {
+        "label": "D",
+        "text": "“ERROR2”"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 39,
+    "source_question_number": 9,
+    "question": "Where are values of query parameters stored in the Mule event by the HTTP Listener?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Payload"
+      },
+      {
+        "label": "B",
+        "text": "Attributes"
+      },
+      {
+        "label": "C",
+        "text": "Inbound Properties"
+      },
+      {
+        "label": "D",
+        "text": "Variables"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 40,
+    "source_question_number": 58,
+    "question": "What is a core characteristic of the Modern API?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "API is rapidly prototyped following AGILE methodology."
+      },
+      {
+        "label": "B",
+        "text": "API follows the RESTful architecture."
+      },
+      {
+        "label": "C",
+        "text": "API is designed first using an API specification for rapid feedback."
+      },
+      {
+        "label": "D",
+        "text": "API has a mechanism to accept feedback and suggestions for improvement."
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 41,
+    "source_question_number": 6,
+    "question": "How to import Core (dw::Core) module into your DataWeave scripts?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "import dw::core"
+      },
+      {
+        "label": "B",
+        "text": "Not needed"
+      },
+      {
+        "label": "C",
+        "text": "None of these"
+      },
+      {
+        "label": "D",
+        "text": "import core"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 42,
+    "source_question_number": 69,
+    "question": "A web client sends a request to http://localhost:8081?dept=sales.\nWhat is the correct DataWeave expression to access the value of dept?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "attributes.queryParams.dept"
+      },
+      {
+        "label": "B",
+        "text": "attributes.dept"
+      },
+      {
+        "label": "C",
+        "text": "message.queryParams.dept"
+      },
+      {
+        "label": "D",
+        "text": "vars.dept"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 43,
+    "source_question_number": 33,
+    "question": "What DataWeave 2.0 type can be used as input to a mapObject operation?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Array"
+      },
+      {
+        "label": "B",
+        "text": "Object"
+      },
+      {
+        "label": "C",
+        "text": "String"
+      },
+      {
+        "label": "D",
+        "text": "Map"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 44,
+    "source_question_number": 2,
+    "question": "What does to the attributes of a Mule event happen in a flow after an outbound HTTP Request is made?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Attributes do not change."
+      },
+      {
+        "label": "B",
+        "text": "Previous attributes are passed unchanged."
+      },
+      {
+        "label": "C",
+        "text": "Attributes are replaced with new attributes from the HTTP Request response."
+      },
+      {
+        "label": "D",
+        "text": "New attributes may be added from the HTTP response headers, but no headers are ever removed."
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 45,
+    "source_question_number": 10,
+    "question": "How can you call a flow from Dataweave?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Not allowed"
+      },
+      {
+        "label": "B",
+        "text": "Include function"
+      },
+      {
+        "label": "C",
+        "text": "Look up function"
+      },
+      {
+        "label": "D",
+        "text": "Tag function"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 46,
+    "source_question_number": 3,
+    "question": "The new RAML spec has been published to Anypoint Exchange with client credentials.\nWhat is the next step to gain access to the API?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Email the owners of the API."
+      },
+      {
+        "label": "B",
+        "text": "Create a new client application."
+      },
+      {
+        "label": "C",
+        "text": "No additional steps needed."
+      },
+      {
+        "label": "D",
+        "text": "Request access to the API in Anypoint Exchange."
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 47,
+    "source_question_number": 13,
+    "question": "An API has been created in Design Center.\nWhat is the next step to make the API discoverable?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Deploy the API to a Maven repository."
+      },
+      {
+        "label": "B",
+        "text": "Publish the API from inside flow designer."
+      },
+      {
+        "label": "C",
+        "text": "Publish the API to Anypoint Exchange."
+      },
+      {
+        "label": "D",
+        "text": "Enable autodiscovery in API Manager."
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 48,
+    "source_question_number": 1,
+    "question": "How would you debug Mule applications?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Using breakpoints"
+      },
+      {
+        "label": "B",
+        "text": "Checking RAML"
+      },
+      {
+        "label": "C",
+        "text": "By Deploying apps on production"
+      },
+      {
+        "label": "D",
+        "text": "Cannot do it"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 49,
+    "source_question_number": 57,
+    "question": "What is the face of CloudHub and integrates with Platform Services?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "None of these"
+      },
+      {
+        "label": "B",
+        "text": "Runtime Manager Console"
+      },
+      {
+        "label": "C",
+        "text": "Integration Apps"
+      },
+      {
+        "label": "D",
+        "text": "CloudHub Workers"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 50,
+    "source_question_number": 53,
+    "question": "Where would you create SLA Tiers for an API?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Exchange"
+      },
+      {
+        "label": "B",
+        "text": "API Manager"
+      },
+      {
+        "label": "C",
+        "text": "Anypoint MQ"
+      },
+      {
+        "label": "D",
+        "text": "Within the API"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 51,
+    "source_question_number": 50,
+    "question": "How does Runtime Manager Console connect with App Data and Logs of a Mule app?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "None of these"
+      },
+      {
+        "label": "B",
+        "text": "Integration Apps"
+      },
+      {
+        "label": "C",
+        "text": "CloudHub Workers"
+      },
+      {
+        "label": "D",
+        "text": "Rest API"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 52,
+    "source_question_number": 36,
+    "question": "What does the Mule runtime use to enforce policies and limit access to APIs?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "API Manager"
+      },
+      {
+        "label": "B",
+        "text": "The proxy created by API Manager"
+      },
+      {
+        "label": "C",
+        "text": "The Mule runtime’s embedded API Gateway"
+      },
+      {
+        "label": "D",
+        "text": "Anypoint Access Control"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 53,
+    "source_question_number": 35,
+    "question": "What statement is a part of MuleSoft’s description of an application network?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Creates and manages high availability and fault tolerant services and infrastructure."
+      },
+      {
+        "label": "B",
+        "text": "Creates reusable APIs and assets designed to be consumed by other business units."
+      },
+      {
+        "label": "C",
+        "text": "Creates and manages a collection of JMS messaging services and infrastructure."
+      },
+      {
+        "label": "D",
+        "text": "Leverages Central IT to deliver complete point-to-point solutions with master data management."
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 54,
+    "source_question_number": 30,
+    "question": "What is the purpose of API autodiscovery?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Enables API Manager to discover the published API on Anypoint Exchange."
+      },
+      {
+        "label": "B",
+        "text": "Allows a deployed Mule application to connect with API Manager to download policies and act as its own API proxy."
+      },
+      {
+        "label": "C",
+        "text": "Enables an API to be directly managed in API Manager."
+      },
+      {
+        "label": "D",
+        "text": "Allows the Mule application to be automatically discovered on Anypoint Exchange."
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 55,
+    "source_question_number": 15,
+    "question": "How is policy defined in terms of classloader of an API?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Classloader isolation does not exist between the application, the runtime and connectors, and policies."
+      },
+      {
+        "label": "B",
+        "text": "Classloader isolation exists between the application, the runtime and connectors, and policies."
+      },
+      {
+        "label": "C",
+        "text": "None of these."
+      },
+      {
+        "label": "D",
+        "text": "Classloader isolation partially exists between the application, the runtime and connectors, and policies."
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 56,
+    "source_question_number": 5,
+    "question": "What is not an asset?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Exchange"
+      },
+      {
+        "label": "B",
+        "text": "Template"
+      },
+      {
+        "label": "C",
+        "text": "Example"
+      },
+      {
+        "label": "D",
+        "text": "Connector"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 57,
+    "source_question_number": 24,
+    "question": "How are multiple conditions used in a Choice router to route events?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "To route the same event to the matched route of EVERY true condition."
+      },
+      {
+        "label": "B",
+        "text": "None of these."
+      },
+      {
+        "label": "C",
+        "text": "To find the FIRST true condition, then distribute the event to the ONE matched route."
+      },
+      {
+        "label": "D",
+        "text": "To find the FIRST true condition, then route the same event to the matched route and ALL FOLLOWING routes."
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 58,
+    "source_question_number": 72,
+    "question": "Refer to the exhibit.\n\nWhat is the correct syntax to add a customer ID as a URI parameter in an HTTP Listener path?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "(customerID)"
+      },
+      {
+        "label": "B",
+        "text": "#[customerID]"
+      },
+      {
+        "label": "C",
+        "text": "{customerID}"
+      },
+      {
+        "label": "D",
+        "text": "${customerID}"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 59,
+    "source_question_number": 67,
+    "question": "Refer to the exhibits.\n\nThe main flow contains an HTTP Request. The HTTP Listeners and HTTP Request use default configurations.\nA web client sends a GET request to the main flow’s HTTP Listener that includes a modelName query parameter.\nWhat values are accessible in the child flow?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "payload"
+      },
+      {
+        "label": "B",
+        "text": "payload modelName query param"
+      },
+      {
+        "label": "C",
+        "text": "payload planeModel var"
+      },
+      {
+        "label": "D",
+        "text": "payload modelName query param planeModel var"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 60,
+    "source_question_number": 12,
+    "question": "In the Database On Table Row operation, what does the Watermark column enable the On Table Row operation to do?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "To save the most recent records retrieved from a database to enable database caching."
+      },
+      {
+        "label": "B",
+        "text": "To enable duplicate processing of records in a database."
+      },
+      {
+        "label": "C",
+        "text": "To avoid duplicate processing of records in a database."
+      },
+      {
+        "label": "D",
+        "text": "To delete the most recent records retrieved from a database to enable database caching."
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 61,
+    "source_question_number": 133,
+    "question": "Refer to the exhibit. The Mule application’s connectors are configured with property placeholders whose values are set in the config.yaml file.\n\nWhat must be added to the Mule application to link the config.yaml file’s values with the property placeholders?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "A dependency element in the pom.xml file"
+      },
+      {
+        "label": "B",
+        "text": "A file-config element in the acme-app.xml file"
+      },
+      {
+        "label": "C",
+        "text": "A propertiesFile key/value pair in the mule.artifact.json file"
+      },
+      {
+        "label": "D",
+        "text": "A configuration-properties element in the acme-app.xml file"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 62,
+    "source_question_number": 153,
+    "question": "Refer to the exhibits. Northern Trail Outfitters is developing a Mule application to process web client POST requests with payloads containing order information, including the user name and purchased items. The Shipping connector returns a shipping address for the input payload’s user name. The Shipping connector’s Shipping Address operation is configured with a target named shippingAddress.\n\nThe Set Payload transformer needs to set an item key equal to the items value from the original received payload and a shippinglnfo key equal to the Shipping Address operation’s response.\n\nWhat is a straightforward way to properly configure the Set Payload transformer with the required data?\n\nInput payload:",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": ""
+      },
+      {
+        "label": "B",
+        "text": ""
+      },
+      {
+        "label": "C",
+        "text": ""
+      },
+      {
+        "label": "D",
+        "text": ""
+      }
+    ],
+    "answer": "B",
+    "images": [],
+    "note": "As alternativas originais estavam apenas em uma imagem/exibit que não foi capturada como texto na fonte; texto das alternativas indisponível."
+  },
+  {
+    "id": 63,
+    "source_question_number": 124,
+    "question": "Refer to the exhibit. How should the WHERE clause be changed to set the city and state values from the configured input parameters?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "WHERE city = :city AND state = :state"
+      },
+      {
+        "label": "B",
+        "text": "WHERE city = attributes.city AND state = attributes.state"
+      },
+      {
+        "label": "C",
+        "text": "WHERE city := ${city} AND state := ${state}"
+      },
+      {
+        "label": "D",
+        "text": "WHERE city = #[city] AND state = #[state]"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 64,
+    "source_question_number": 120,
+    "question": "Refer to the exhibits. The Mule application does NOT define any global error handlers.\n\nThe Validation component in the Try scope throws an error.\n\nWhat response message is returned to a client request to the main flows HTTP Listener?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“Error –main flow”"
+      },
+      {
+        "label": "B",
+        "text": "“Error –Try scope”"
+      },
+      {
+        "label": "C",
+        "text": "“Success –main flow”"
+      },
+      {
+        "label": "D",
+        "text": "Validation Error"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 65,
+    "source_question_number": 104,
+    "question": "Refer to the exhibits.\n\nThe Set Payload transformer in the addItem child flow uses DataWeave to create an order object.\nWhat is the correct DataWeave code for the Set Payload transformer in the createOrder flow to use the addItem child flow to add a router cal with the price of 100 to the order?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "lookup( “addItem”, { price: “100”, item: “router”, itemType: “cable” } )"
+      },
+      {
+        "label": "B",
+        "text": "addItem( { payload: { price: “100”, item: “router”. itemType: “cable” } } )"
+      },
+      {
+        "label": "C",
+        "text": "lookup( “addItem”, { payload: { price: “100”, item: “router”, itemType: “cable” } } )"
+      },
+      {
+        "label": "D",
+        "text": "addItem( { price: “100”, item: “router”, itemType: “cable” } )"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 66,
+    "source_question_number": 147,
+    "question": "Refer to the exhibits. The my-app.xml file contains an Error Handler scope named “global-error-handler”.\n\nThe Error Handler scope needs to be set to be the default error handler for every flow in the Mule application.\n\nWhere and how should the value “global-error-handler” be added in the Mule project so that the Error Handler scope is the default error handler of the Mule application?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "In the Validation folder, as the value of a global element in the error-handling.yaml file"
+      },
+      {
+        "label": "B",
+        "text": "In the my-app.xml file, as an attribute of a configuration element"
+      },
+      {
+        "label": "C",
+        "text": "In the pom.xml file, as the value of a global element"
+      },
+      {
+        "label": "D",
+        "text": "In the mule-artifact.json file, as the value of a key-value pair"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 67,
+    "source_question_number": 132,
+    "question": "An API instance of type API endpoint with API proxy is created in API Manager using an API specification from Anypoint Exchange. The API instance is also configured with an API proxy that is deployed and running in CloudHub.\n\nAn SLA-based policy is enabled in API Manager for this API instance.\n\nWhere can an external API consumer obtain a valid client ID and client secret to successfully send request to the API proxy?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "In Anypoint Studio, from components generated by APIkit for the API specification"
+      },
+      {
+        "label": "B",
+        "text": "In Anypoint Studio, from components generated by REST Connect for the API specification"
+      },
+      {
+        "label": "C",
+        "text": "In Runtime Manager, from the Properties tab of the deployed approved API proxy"
+      },
+      {
+        "label": "D",
+        "text": "In the organization’s pubic API portal in Anypoint Exchange, from an approved client application for the API proxy"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 68,
+    "source_question_number": 155,
+    "question": "Refer to the exhibit. This RAML fragment defines a Book data type that is used in a RAML API specification.\n\nAn API implementation is created for this RAML API specification.\n\nWhat is valid JSON input for a request from a web client to an implementation of this RAML API specification?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": ""
+      },
+      {
+        "label": "B",
+        "text": ""
+      },
+      {
+        "label": "C",
+        "text": ""
+      },
+      {
+        "label": "D",
+        "text": ""
+      }
+    ],
+    "answer": "A",
+    "images": [],
+    "note": "As alternativas originais estavam apenas em uma imagem/exibit que não foi capturada como texto na fonte; texto das alternativas indisponível."
+  },
+  {
+    "id": 69,
+    "source_question_number": 150,
+    "question": "Refer to the exhibits. The Mule application does NOT define any global error handlers.\n\nThe Validation component in the private flow throws an error.\n\nWhat response message is returned to a web client request to the main flow’s HTTP Listener?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“Child error”"
+      },
+      {
+        "label": "B",
+        "text": "“Parent error”"
+      },
+      {
+        "label": "C",
+        "text": "“Validation Error”"
+      },
+      {
+        "label": "D",
+        "text": "“Parent completed”"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 70,
+    "source_question_number": 144,
+    "question": "A function named toUpper needs to be defined that accepts a string named userName and returns the string in uppercase.\n\nWhat is the correct DataWeave code to define the toUpper function?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "fun toUpper(username) = upper(userName)"
+      },
+      {
+        "label": "B",
+        "text": "var toUpper(username) = upper(userName)"
+      },
+      {
+        "label": "C",
+        "text": "fun toUpper(username) -> upper(userName)"
+      },
+      {
+        "label": "D",
+        "text": "var toUpper(username) -> upper(userName)"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 71,
+    "source_question_number": 141,
+    "question": "Refer to the exhibits. In the Choice router, the When expression for the domesticShipping route is set to “#[payload =’FR’]”\n\nWhat is logged after the Choice router completes?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The result of the domesticShipping flow"
+      },
+      {
+        "label": "B",
+        "text": "A string with value “FR”"
+      },
+      {
+        "label": "C",
+        "text": "A DataWeaver syntax error"
+      },
+      {
+        "label": "D",
+        "text": "The result of the internationalShipping flow"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 72,
+    "source_question_number": 139,
+    "question": "Refer to the exhibits. The Set Variable transformer is set with value #[{ first: “Max”, last “Mule” }].\n\nWhat is a valid DateWeave expression to set as the message attribute of the Logger to access the value “Max” from the Mule event?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "vars.”customer”. “first”"
+      },
+      {
+        "label": "B",
+        "text": "customer.first"
+      },
+      {
+        "label": "C",
+        "text": "“customer.first”"
+      },
+      {
+        "label": "D",
+        "text": "vars.”customer.first”"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 73,
+    "source_question_number": 135,
+    "question": "What is the output type of the DataWeave flatten function?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Object"
+      },
+      {
+        "label": "B",
+        "text": "Array"
+      },
+      {
+        "label": "C",
+        "text": "Map"
+      },
+      {
+        "label": "D",
+        "text": "Java"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 74,
+    "source_question_number": 134,
+    "question": "A Mule project contains a DataWeave module file WebStore.dwl that defines a function named loginUser. The module file is located in the project’s src/main/resources/libs/dw folder.\n\nWhat is correct DataWeave code to import all of the WebStore.dwl file’s functions and then call the loginUser function for the login “cindy.park@example.com”?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "import libs.dw.WebStore\n—\nloginUser( “cindy.park@example.com” )"
+      },
+      {
+        "label": "B",
+        "text": "import * from libs::dw\n—\nWebStore::loginUser( “cindy.park@example.com” )"
+      },
+      {
+        "label": "C",
+        "text": "import * from libs::dw::WebStore\n—\nloginUser( “cindy.park@example.com” )"
+      },
+      {
+        "label": "D",
+        "text": "import libs.dw\n—\nWebStore.loginUser( “cindy.park@example.com” )"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 75,
+    "source_question_number": 129,
+    "question": "A REST Connect module is generated for a RAML specification, and then the REST Connect module is imported into a Mule application.\n\nFor each method of the RAML specification, what does the REST Connect module provide?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "A flow"
+      },
+      {
+        "label": "B",
+        "text": "A scope"
+      },
+      {
+        "label": "C",
+        "text": "An event source"
+      },
+      {
+        "label": "D",
+        "text": "An operation"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 76,
+    "source_question_number": 126,
+    "question": "Following MuleSoft’s recommended API-led connectivity approach, an organization has created an application network. The organization now needs to create an API to transform, orchestrate, and aggregate data proved by other APIs in the application network. This API should be flexible enough to handle data from additional APIs in the future.\n\nAccording to MuleSoft’s recommended API-led connectivity approach, what is the best layer for this new API?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Experience layer"
+      },
+      {
+        "label": "B",
+        "text": "Security layer"
+      },
+      {
+        "label": "C",
+        "text": "System layer"
+      },
+      {
+        "label": "D",
+        "text": "Process layer"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 77,
+    "source_question_number": 110,
+    "question": "Why would a Mule application use the ${http.port} property placeholder for its HTTP Listener port when it is deployed to CloudHub?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Allows CloudHub to automatically change the HTTP port to allow external clients to connect to the HTTP Listener"
+      },
+      {
+        "label": "B",
+        "text": "Allows clients to VPN directly to the application at the Mule application’s configured HTTP port"
+      },
+      {
+        "label": "C",
+        "text": "Allows MuleSoft Support to troubleshoot the application by connecting directly to the HTTP Listener"
+      },
+      {
+        "label": "D",
+        "text": "Allows CloudHub to automatically register the application with API Manager"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 78,
+    "source_question_number": 109,
+    "question": "An app team is developing a mobile banking app. It took them two months to create their own APIs to access transaction information from a central database. The app team later found out that another team had already built an API that accesses the transaction information they need.\nAccording to MuleSoft, what organization structure could have saved the app team two months of development time?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Center for Enablement"
+      },
+      {
+        "label": "B",
+        "text": "Center of Excellence"
+      },
+      {
+        "label": "C",
+        "text": "Central API Review Board"
+      },
+      {
+        "label": "D",
+        "text": "MuleSoft Support Center"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 79,
+    "source_question_number": 95,
+    "question": "Refer to the exhibits.\n\nA web client sends a GET request to the HTTP Listener.\nWhat response message is returned to the web client?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“”"
+      },
+      {
+        "label": "B",
+        "text": "“End”"
+      },
+      {
+        "label": "C",
+        "text": "“Start”"
+      },
+      {
+        "label": "D",
+        "text": "“String is not blank”"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 80,
+    "source_question_number": 89,
+    "question": "By default, what happens to a file after it is read using an FTP connector Read operation?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The file is moved to a different folder"
+      },
+      {
+        "label": "B",
+        "text": "The file stays in the same folder unchanged"
+      },
+      {
+        "label": "C",
+        "text": "The file is renamed in the same folder"
+      },
+      {
+        "label": "D",
+        "text": "The file is deleted from the folder"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 81,
+    "source_question_number": 81,
+    "question": "Refer to the exhibits.\n\nThe web client sends a POST request to the ACME Order API with an XML payload. An error is returned.\nWhat should be changed in the request so that a success response code is returned to the web client?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Set a request header with the name Content-Type to a value of application/octet-stream"
+      },
+      {
+        "label": "B",
+        "text": "Set a request header with the name Content-Type to a value of application/xml"
+      },
+      {
+        "label": "C",
+        "text": "Set a response header with the name Content-Type to a value of application/xml"
+      },
+      {
+        "label": "D",
+        "text": "Set a response header with the name Content-Type to a value of application/octet-stream"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 82,
+    "source_question_number": 75,
+    "question": "Refer to the exhibits.\n\nA web client sends a POST request to the HTTP Listener with the payload `Hello-`.\nWhat response is returned to the web client?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Hello-HTTP-JMS2-Three"
+      },
+      {
+        "label": "B",
+        "text": "HTTP-JMS2-Three"
+      },
+      {
+        "label": "C",
+        "text": "Hello-JMS1-HTTP-JMS2-Three"
+      },
+      {
+        "label": "D",
+        "text": "Hello-HTTP-Three"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 83,
+    "source_question_number": 18,
+    "question": "What is the use of DevKit in Mule 4?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Facilitates communication between third-party systems and Mule applications."
+      },
+      {
+        "label": "B",
+        "text": "No use."
+      },
+      {
+        "label": "C",
+        "text": "Offers connector end user support in a few aspects of Mule app design."
+      },
+      {
+        "label": "D",
+        "text": "Enables the development of Anypoint Connectors."
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 84,
+    "source_question_number": 16,
+    "question": "According to Mulesoft, how are Modern APIs treated as?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "products"
+      },
+      {
+        "label": "B",
+        "text": "code"
+      },
+      {
+        "label": "C",
+        "text": "soap services"
+      },
+      {
+        "label": "D",
+        "text": "organizations"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 85,
+    "source_question_number": 83,
+    "question": "Refer to the exhibits.\n\nThe input array of strings is processed by the batch job that processes, filters, and aggregates the values.\nWhat is the last message logged by the Logger component after the batch job completes processing?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "[ [“A”, “C”, “D”], [“E”] ]"
+      },
+      {
+        "label": "B",
+        "text": "[ “E” ]"
+      },
+      {
+        "label": "C",
+        "text": "[ “D”, “E” ]"
+      },
+      {
+        "label": "D",
+        "text": "[ “A”, “C”, “D”, “E” ]"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 86,
+    "source_question_number": 31,
+    "question": "What is NOT part of a Mule 4 event?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "attributes"
+      },
+      {
+        "label": "B",
+        "text": "payload"
+      },
+      {
+        "label": "C",
+        "text": "inboundProperties"
+      },
+      {
+        "label": "D",
+        "text": "message"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 87,
+    "source_question_number": 116,
+    "question": "Refer to the exhibits.\n\nThe main flow contains a Flow Reference to the child flow.\nA web client sends a GET request to the main flow’s HTTP Listener that includes a make query parameter.\nWhat values are accessible in the child flow?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "payload"
+      },
+      {
+        "label": "B",
+        "text": "payload make query param"
+      },
+      {
+        "label": "C",
+        "text": "payload model var"
+      },
+      {
+        "label": "D",
+        "text": "payload make query param model var"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 88,
+    "source_question_number": 146,
+    "question": "Refer to the exhibit. A Mule application configures a property placeholder file named config.yaml to set some property placeholders for an HTTP connector.\n\nWhat is a valid properties placeholder file to set these values?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "{\nhttp:\nbasePath: “api”\nport: “8081”\nhost: “localhost”\n}"
+      },
+      {
+        "label": "B",
+        "text": "http.port = 8081\nhttp.host = “localhost”"
+      },
+      {
+        "label": "C",
+        "text": "http:\nbasePath: “api”\nport: “8081”\nhost: “localhost”"
+      },
+      {
+        "label": "D",
+        "text": "http:\nport = “8081”\nhost = “localhost”"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 89,
+    "source_question_number": 128,
+    "question": "A Mule application’s HTTP Listener is configured with the HTTP protocol. The HTTP Listener’s port attribute is configured with a property placeholder named http.port. The Mule application sets the http.port property placeholder’s value to 9090.\n\nTho Mule application’s deployed to CloudHub without setting any properties in the Runtime Manager Properties tab, and a log message reports the status of the HTTP Listener after the Mule application deployment completes.\n\nAfter the Mule application is deployed, what information is reported in the worker logs related to the port on which the Mule application’s HTTP Listener listens?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The HTTP Listener is listening on port 8081."
+      },
+      {
+        "label": "B",
+        "text": "The HTTP Listener is listening on port 9090."
+      },
+      {
+        "label": "C",
+        "text": "The HTTP Listener failed to bind to the port and is not listening for connections."
+      },
+      {
+        "label": "D",
+        "text": "The HTTP Listener is listening on port 80."
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 90,
+    "source_question_number": 122,
+    "question": "An organization is beginning to follow MuleSoft’s recommended API-led connectivity approach to use modern APIs to support the development and lifecycles of their integration solutions and to close the IT delivery gap.\n\nWhat distinguishes between how modern APIs are organized in a MuleSoft-recommended API-led connectivity approach vs. other common enterprise integration solutions?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The API interfaces are specified as macroservices, with one API representing all the business logic of an existing and proven end-to-end integration solution."
+      },
+      {
+        "label": "B",
+        "text": "The API implementations are monitored with common tools, centralized monitoring, and security systems."
+      },
+      {
+        "label": "C",
+        "text": "The API interfaces are specified at a granularity intended for developers to consume specific aspects of integration processes."
+      },
+      {
+        "label": "D",
+        "text": "The API implementations are built with standards using common lifecycle and centralized configuration management tools."
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 91,
+    "source_question_number": 101,
+    "question": "Refer to the exhibits.\n\nWhat payload and quantity are logged at the end of the main flow?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "[[order1, order2, order3, order4], 14]"
+      },
+      {
+        "label": "B",
+        "text": "[[1,2,3,4], 10]"
+      },
+      {
+        "label": "C",
+        "text": "[[1,2,3,4], 14]"
+      },
+      {
+        "label": "D",
+        "text": "[order1order2order3order4, 14]"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 92,
+    "source_question_number": 100,
+    "question": "Refer to the exhibits.\n\nThe Validation component in the private flow throws an error.\nWhat response message is returned to a web client request to the main flow’s HTTP Listener?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Error – private flow"
+      },
+      {
+        "label": "B",
+        "text": "Validation Error"
+      },
+      {
+        "label": "C",
+        "text": "Error – main flow"
+      },
+      {
+        "label": "D",
+        "text": "Success – main flow"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 93,
+    "source_question_number": 97,
+    "question": "Refer to the exhibits.\n\nA web client sends a GET request to the HTTP Listener and the HTTP Request throws an error.\nWhat payload and status code are returned to the web client.",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Response body: “START” Default response status code: 200"
+      },
+      {
+        "label": "B",
+        "text": "Response body: “ERROR1” Default response status code: 200"
+      },
+      {
+        "label": "C",
+        "text": "Response body: “END” Default response status code: 200"
+      },
+      {
+        "label": "D",
+        "text": "Error response body: error.description Default error response status code: 500"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 94,
+    "source_question_number": 142,
+    "question": "Refer to the exhibits. In the color flow, both the variable named color and the payload are set to “red”.\n\nAn HTTP POST requests then sent to the decideColor flow’s HTTP Listener.\n\nWhat is the payload value at the Logger component after the HTTP Request completes?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“red”"
+      },
+      {
+        "label": "B",
+        "text": "“blue”"
+      },
+      {
+        "label": "C",
+        "text": "“white”"
+      },
+      {
+        "label": "D",
+        "text": "An error message"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 95,
+    "source_question_number": 127,
+    "question": "Refer to the exhibits. The main flow contains an HTTP Request operation configured to call the child flow’s HTTP Listener.\n\nA web client sends a GET request the HTTP Listener with the qty query parameter set to 30.\n\nAfter the HTTP Request operation completes, what parts of the Mule event at the main flow’s Logger component are the same as the Mule event that was input to the HTTP Request operation?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The entire Mule event"
+      },
+      {
+        "label": "B",
+        "text": "The payload and all variables"
+      },
+      {
+        "label": "C",
+        "text": "All variables"
+      },
+      {
+        "label": "D",
+        "text": "The payload and all attributes"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 96,
+    "source_question_number": 130,
+    "question": "Refer to the exhibits. The Batch Job scope contains two Batch Step scopes with different accept expressions.\n\nInput payload:\n\nThe input payload is passed to the Batch Job scope.\n\nAfter the entire payload is processed by the Batch Job Scope, what messages have been logged by the Logger components?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "{ “amount”: 500 }\n{ “amount”: 101 }\n{ “step2amount”: 1000 }\n{ “step2amount”: 500 }"
+      },
+      {
+        "label": "B",
+        "text": "{ “amount”: 500 }\n{ “amount”: 101 }\n{ “step2amount”: 1000 }\n{ “step2amount”: 400 }"
+      },
+      {
+        "label": "C",
+        "text": "{ “amount”: 500 }\n{ “amount”: 601 }\n{ “step2amount”: 1000 }\n{ “step2amount”: 500 }\n{ “step2amount”: 601 }"
+      },
+      {
+        "label": "D",
+        "text": "{ “amount”: 500 }\n{ “amount”: 101 }\n{ “step2amount”: 1000 }"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 97,
+    "source_question_number": null,
+    "question": "Refer to the exhibits. The updateTemp and getTemp flows share the same default object store.\n\nA web client sends one GET request to the test flow’s HTTP Listener, which causes the test flow to call the updateTemp flow. After the test flow returns a response, the web client then sends a different GET request to the getTemp flow’s HTTP Listener. The test flow is not called a second time.\n\nWhat response is returned from the request to the getTemp flow’s HTTP Listener?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": ""
+      },
+      {
+        "label": "B",
+        "text": ""
+      },
+      {
+        "label": "C",
+        "text": ""
+      },
+      {
+        "label": "D",
+        "text": ""
+      }
+    ],
+    "answer": "B",
+    "images": [],
+    "note": "As alternativas originais estavam apenas em uma imagem/exibit que não foi capturada como texto na fonte; texto das alternativas indisponível."
+  },
+  {
+    "id": 98,
+    "source_question_number": null,
+    "question": "Refer to the exhibit. APIkit is used to generate flow components for the RAML specification.\n\nHow many APIkit Router components are generated to handle requests to every endpoint defined in the RAML specification?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "1"
+      },
+      {
+        "label": "B",
+        "text": "2"
+      },
+      {
+        "label": "C",
+        "text": "3"
+      },
+      {
+        "label": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 99,
+    "source_question_number": 80,
+    "question": "Refer to the exhibits.\n\nThe main flow contains an HTTP Request in the middle of the flow. The HTTP Listeners and HTTP Request use default configurations.\nA web client sends a GET request to the main flow’s HTTP Listener. The GET request includes query for the pedigree of a piano.\nWhat values are accessible to the Logger component at the end of the main flow?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "payload"
+      },
+      {
+        "label": "B",
+        "text": "payload pedigree query params"
+      },
+      {
+        "label": "C",
+        "text": "payload producer var"
+      },
+      {
+        "label": "D",
+        "text": "payload pedigree query params producer var"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 100,
+    "source_question_number": 107,
+    "question": "Refer to the exhibits.\n\nA web client sends sale data in a POST request to the Mule application. The Transform Message component then enriches the payload by prepending a vendor name to the sale data.\nWhat is written to the sales.csv file when the flow executes?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The enriched payload in JSON format"
+      },
+      {
+        "label": "B",
+        "text": "The enriched payload in XML format"
+      },
+      {
+        "label": "C",
+        "text": "The enriched payload in CSV format"
+      },
+      {
+        "label": "D",
+        "text": "An error message"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 101,
+    "source_question_number": 138,
+    "question": "An organization’s Center for Enablement (CAE) has built foundational assets (API specifications and implementation template, common frameworks, and best practices guides) and published them to Anypoint Exchange.\n\nWhat is a metric related to these foundational assets that helps the organization measure the success of its C4E efforts?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Correlation of key performance indicators (KPIs) of production applications with foundational assets"
+      },
+      {
+        "label": "B",
+        "text": "Correlation of each foundational asset with the counts of developers that downloaded each asset"
+      },
+      {
+        "label": "C",
+        "text": "Utilization counts of foundational assets in production applications"
+      },
+      {
+        "label": "D",
+        "text": "Counts of how many lines of businesses (LoBs) consumed each foundational asset"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 102,
+    "source_question_number": 137,
+    "question": "A Mule application configured with autodiscovery implements an API.\n\nWhere is governance enforced for policies defined for this Mule application?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "In a separate API proxy application"
+      },
+      {
+        "label": "B",
+        "text": "In Runtime Manager"
+      },
+      {
+        "label": "C",
+        "text": "In API Manager"
+      },
+      {
+        "label": "D",
+        "text": "In the Mule application"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 103,
+    "source_question_number": 148,
+    "question": "An API was designed in API Designer, published to Anypoint Exchange, then imported into API Manager.\n\nA Mule application implements this API and is deployed to CloudHub. API Manager manages this deployed API implementation.\n\nWhat is the easiest and most idiomatic (used for its intended purpose) way to enforce a Client ID Enforcement policy on this Mule application?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "In Anypoint Studio, code a custom policy for Client ID Enforcement and then add the custom policy to Runtime Manager for the Mule application deployment"
+      },
+      {
+        "label": "B",
+        "text": "In Anypoint Design Center, code a custom policy for Client ID Enforcement and then publish the custom policy to the API portal in Anypoint Exchange"
+      },
+      {
+        "label": "C",
+        "text": "In API Designer, add Client ID Enforcement policy requirements to the API specification"
+      },
+      {
+        "label": "D",
+        "text": "In API Manager, apply a Client ID Enforcement policy for the API instance"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 104,
+    "source_question_number": 140,
+    "question": "Refer to the exhibits. The Mule application configures and uses two HTTP Listener global configuration elements.\n\nThe Mule application is run in Anypoint Studio.\n\nIf the Mule application starts correctly, what URI and port number(s) can receive web client requests; if the Mule application fails to start, what is the cause of the failure?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "The Mule application starts successfully\nWeb client requests can only be received at the URI on port 2222, not on port 3333"
+      },
+      {
+        "label": "B",
+        "text": "The Mule application fails to start\nThere is a port bind conflict because the HTTP Request also uses port 3333"
+      },
+      {
+        "label": "C",
+        "text": "The Mule application starts successfully\nWeb client requests can be received at the URI /on port 2222 or port 3333"
+      },
+      {
+        "label": "D",
+        "text": "The Mule application fails to start\nThere is a URL path conflict because both HTTP Listeners are configured with the same path /"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  },
+  {
+    "id": 105,
+    "source_question_number": 103,
+    "question": "Refer to the exhibits.\n\nA web client sends a POST request with the payload { `oid`: `1000`. `itemid`: `AC200`, `qty`: `4` } to the Mule application. The File Write operation throws a\nFILE:CONNECTIVITY error.\nWhat response message is returned to the web client?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“FILE:CONNECTIVITY”"
+      },
+      {
+        "label": "B",
+        "text": "“ORDER:NOT_CREATED”"
+      },
+      {
+        "label": "C",
+        "text": "“OTHER ERROR”"
+      },
+      {
+        "label": "D",
+        "text": "“File written”"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 106,
+    "source_question_number": 105,
+    "question": "Refer to the exhibits.\n\nA JSON payload is set in the Set Payload transformer.\nWhat is logged by the Logger?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“String”"
+      },
+      {
+        "label": "B",
+        "text": "“Object”"
+      },
+      {
+        "label": "C",
+        "text": "“Array”"
+      },
+      {
+        "label": "D",
+        "text": "“JSON”"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 107,
+    "source_question_number": 114,
+    "question": "Refer to the exhibits.\n\nThe Mule application contains a Choice router.\nWhat is logged when the flow completes?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "US"
+      },
+      {
+        "label": "B",
+        "text": "“REGION”"
+      },
+      {
+        "label": "C",
+        "text": "EU"
+      },
+      {
+        "label": "D",
+        "text": "[“US”, “EU”]"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 108,
+    "source_question_number": 151,
+    "question": "Refer to the exhibits. A database Address table contains a ZIPCODE column and an increasing ID column. The Address table currently contains four (4) records. The On Table Row Database listener is configured with its watermark set to the Address table’s ZIPCODE column and then the Mule application is run in Anypoint Studio for the first time, and the On Table Row Database listener polls the Address table.\n\nA new row is added to the database with ID=5 and ZIPCODE=90006, and then the On Table Row Database listener polls the database again.\n\nAfter the next execution of the On Table Row Database listener polling, what database rows have been processed by the Mule flow since the Mule application was started?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "ID ZIPCODE –\n1 90001\n2 90005\n3 90009\n4 90001"
+      },
+      {
+        "label": "B",
+        "text": "ID ZIPCODE –\n1 90001\n2 90005\n3 90009\n4 90001\n5 90006"
+      },
+      {
+        "label": "C",
+        "text": "ID ZIPCODE –\n1 90001\n2 90005\n3 90009"
+      },
+      {
+        "label": "D",
+        "text": "ID ZIPCODE –\n1 90001\n2 90005\n3 90009\n5 90006"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 109,
+    "source_question_number": 65,
+    "question": "A Database On Table Row listener retrieves data from a CUSTOMER table that contains a primary key user_id column and an increasing login_date_time column. Neither column allows duplicate values.\nHow should the listener be configured so it retrieves each row at most one time?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Set the watermark column to the login_date_time column"
+      },
+      {
+        "label": "B",
+        "text": "Set the target value to the last retrieved login_date_time value"
+      },
+      {
+        "label": "C",
+        "text": "Set the target value to the last retrieved user_id value"
+      },
+      {
+        "label": "D",
+        "text": "Set the watermark column to the user_id column"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 110,
+    "source_question_number": 131,
+    "question": "Refer to the exhibits. The Batch Job scope processes the array of strings.\n\nAfter the Batch Job scope completes processing the input payload, what information is logged by the Logger component?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "[“A”, “B”, “C”]"
+      },
+      {
+        "label": "B",
+        "text": "Total Records processed: 3 –\n\nSuccessful records: 3 –\n\nFailed Records: 0 –\npayload (“A”, “B”, “C”)"
+      },
+      {
+        "label": "C",
+        "text": "Total Records processed: 1 –\n\nSuccessful records: 1 –\n\nFailed Records: 0 –\npayload [“A”, “B”, “C”]"
+      },
+      {
+        "label": "D",
+        "text": "Total Records processed: 3 –\n\nSuccessful records: 3 –\nFailed Records: 0"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 111,
+    "source_question_number": 152,
+    "question": "Refer to the exhibit. The Default scope in the Choice router recursively calls the color flow.\n\nA web client sends a PUT request to the HTTP Listener with payload “Blue”.\n\nWhat response is returned to the web client?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“Red”"
+      },
+      {
+        "label": "B",
+        "text": "“Blk”"
+      },
+      {
+        "label": "C",
+        "text": "An error message"
+      },
+      {
+        "label": "D",
+        "text": "“Green”"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 112,
+    "source_question_number": 70,
+    "question": "Refer to the exhibits.\n\nThe Mule application has multiple HTTP Listeners contained in various configuration XML files. Each HTTP Listener is configured with the same host and with the port number, path, and operation shown in its display name.\nWhat is the minimum number of global elements that must be defined to support all these HTTP Listeners?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "1"
+      },
+      {
+        "label": "B",
+        "text": "2"
+      },
+      {
+        "label": "C",
+        "text": "3"
+      },
+      {
+        "label": "D",
+        "text": "4"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 113,
+    "source_question_number": 59,
+    "question": "Anypoint MQ FIFO queues are limited to how many in flight messages per queue?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "120000"
+      },
+      {
+        "label": "B",
+        "text": "10"
+      },
+      {
+        "label": "C",
+        "text": "100"
+      },
+      {
+        "label": "D",
+        "text": "1000"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 114,
+    "source_question_number": 23,
+    "question": "Which one of them is NOT a flow in Mule?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "sync flow"
+      },
+      {
+        "label": "B",
+        "text": "subflow"
+      },
+      {
+        "label": "C",
+        "text": "async flow"
+      },
+      {
+        "label": "D",
+        "text": "async sub flow"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 115,
+    "source_question_number": 19,
+    "question": "A Scatter-Gather processes a number of separate HTTP requests. Each request returns a Mule event with a JSON payload.\nWhat is the final output of the Scatter-Gather?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "An Object containing all Mule event Objects."
+      },
+      {
+        "label": "B",
+        "text": "An Array containing all Mule event Objects."
+      },
+      {
+        "label": "C",
+        "text": "None of these."
+      },
+      {
+        "label": "D",
+        "text": "The last Mule event object."
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 116,
+    "source_question_number": 8,
+    "question": "What is the object type returned by the File List operation?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "Object of String file names"
+      },
+      {
+        "label": "B",
+        "text": "Array of String file names"
+      },
+      {
+        "label": "C",
+        "text": "Object of Mule event objects"
+      },
+      {
+        "label": "D",
+        "text": "Array of Mule event objects"
+      }
+    ],
+    "answer": "D",
+    "images": []
+  },
+  {
+    "id": 117,
+    "source_question_number": 61,
+    "question": "Refer to the exhibits.\n\nIn the requestFlow an HTTP Request operation is configured to send an HTTP request with an XML payload. The request is sent to the HTTP Listener in the transformFlow.\nThat flow transforms the incoming payload into JSON format and returns the response to the HTTP request. The response of the request is stored in a target variable named theResult.\nWhat is the payload at the Logger component after the HTTP Request?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "A non-empty Java object"
+      },
+      {
+        "label": "B",
+        "text": "The original XML payload"
+      },
+      {
+        "label": "C",
+        "text": "The returned JSON response"
+      },
+      {
+        "label": "D",
+        "text": "null"
+      }
+    ],
+    "answer": "B",
+    "images": []
+  },
+  {
+    "id": 118,
+    "source_question_number": 156,
+    "question": "Refer to the exhibits. The Mule application is stopped at the breakpoint in Anypoint Studio. A watch expression is set to the counter variable.\n\nWhat value is displayed for this watch expression?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "1"
+      },
+      {
+        "label": "B",
+        "text": "11"
+      },
+      {
+        "label": "C",
+        "text": "110"
+      },
+      {
+        "label": "D",
+        "text": "null"
+      }
+    ],
+    "answer": "A",
+    "images": []
+  },
+  {
+    "id": 119,
+    "source_question_number": 121,
+    "question": "Refer to the exhibit. The Default scope in the Choice router recursively calls the color flow.\n\nA web client sends a PUT request to the HTTP Listener with payload “Blue”.\n\nWhat response is returned to the web client?",
+    "alternatives": [
+      {
+        "label": "A",
+        "text": "“Green”"
+      },
+      {
+        "label": "B",
+        "text": "A timeout error"
+      },
+      {
+        "label": "C",
+        "text": "“Bik”"
+      },
+      {
+        "label": "D",
+        "text": "[“Blue”, “Red”, “Bik”]"
+      }
+    ],
+    "answer": "C",
+    "images": []
+  }
+]

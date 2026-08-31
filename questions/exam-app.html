@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --panel: #ffffff;
+    --text: #1b1e24;
+    --muted: #6b7280;
+    --border: #e2e5ea;
+    --primary: #3b5bdb;
+    --primary-contrast: #ffffff;
+    --correct: #1a9e5c;
+    --correct-bg: #e8f8f0;
+    --wrong: #d64545;
+    --wrong-bg: #fdecec;
+    --unanswered: #b98900;
+    --unanswered-bg: #fdf6e3;
+    --radio-border: #b9bfc9;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --panel: #1e2127;
+      --text: #e8e9ec;
+      --muted: #9aa0ab;
+      --border: #2c303a;
+      --primary: #5b7cf5;
+      --primary-contrast: #0e1116;
+      --correct: #35c98a;
+      --correct-bg: #10261c;
+      --wrong: #f16d6d;
+      --wrong-bg: #2b1414;
+      --unanswered: #e0b13d;
+      --unanswered-bg: #2a220f;
+      --radio-border: #4a5060;
+      --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px 80px;
+  }
+  header.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  header.top h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .pill {
+    font-size: 13px;
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 12px;
+  }
+
+  /* ---- Loader screen ---- */
+  .loader-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .loader-card h2 { margin-top: 0; font-size: 18px; }
+  .loader-card p { color: var(--muted); font-size: 14px; line-height: 1.5; }
+  .file-drop {
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    padding: 32px 16px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  .file-drop:hover, .file-drop.dragover {
+    border-color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 6%, transparent);
+  }
+  .file-drop input { display: none; }
+  .file-drop .icon { font-size: 32px; margin-bottom: 8px; }
+  .file-drop .fname { font-weight: 600; margin-top: 6px; word-break: break-all; }
+  .error-msg {
+    color: var(--wrong);
+    background: var(--wrong-bg);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-top: 12px;
+    display: none;
+  }
+
+  /* ---- Exam screen ---- */
+  .progress-bar {
+    height: 6px;
+    background: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--primary);
+    transition: width .2s ease;
+  }
+  .qcard {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 24px;
+  }
+  .qmeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .qtext {
+    font-size: 16px;
+    line-height: 1.55;
+    white-space: pre-line;
+    margin-bottom: 16px;
+  }
+  .qimg {
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .qnote {
+    font-size: 13px;
+    color: var(--unanswered);
+    background: var(--unanswered-bg);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+  }
+  .alt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .alt {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: border-color .12s, background .12s;
+  }
+  .alt:hover { border-color: var(--primary); }
+  .alt.selected {
+    border-color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 10%, transparent);
+  }
+  .alt .radio {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--radio-border);
+    flex: 0 0 auto;
+    margin-top: 2px;
+    position: relative;
+  }
+  .alt.selected .radio { border-color: var(--primary); }
+  .alt.selected .radio::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+  .alt .label {
+    font-weight: 700;
+    color: var(--muted);
+    flex: 0 0 auto;
+    min-width: 18px;
+  }
+  .alt .text {
+    white-space: pre-line;
+    line-height: 1.45;
+    font-size: 14.5px;
+  }
+  .alt-empty {
+    color: var(--muted);
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .nav-row .spacer { flex: 1; }
+  button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity .12s, transform .05s;
+  }
+  button:active { transform: scale(0.98); }
+  button:disabled { opacity: .4; cursor: not-allowed; }
+  .btn-primary { background: var(--primary); color: var(--primary-contrast); }
+  .btn-secondary { background: var(--panel); color: var(--text); border: 1px solid var(--border); }
+  .btn-ghost { background: transparent; color: var(--muted); }
+  .btn-finish { background: var(--correct); color: #ffffff; }
+
+  .qgrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 18px 0 4px;
+  }
+  .qdot {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--muted);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .qdot.current { border-color: var(--primary); color: var(--primary); font-weight: 700; }
+  .qdot.answered { background: color-mix(in srgb, var(--primary) 14%, var(--panel)); }
+
+  /* ---- Results screen ---- */
+  .score-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 28px 24px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .score-big {
+    font-size: 44px;
+    font-weight: 800;
+    margin: 6px 0;
+  }
+  .score-sub { color: var(--muted); font-size: 14px; }
+  .score-breakdown {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .score-breakdown div { font-size: 13px; color: var(--muted); }
+  .score-breakdown b { display: block; font-size: 20px; color: var(--text); }
+  .b-correct b { color: var(--correct); }
+  .b-wrong b { color: var(--wrong); }
+  .b-blank b { color: var(--unanswered); }
+
+  .review-item {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .review-item.ok { border-left-color: var(--correct); }
+  .review-item.bad { border-left-color: var(--wrong); }
+  .review-item.blank { border-left-color: var(--unanswered); }
+  .review-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+  .tag.ok { background: var(--correct-bg); color: var(--correct); }
+  .tag.bad { background: var(--wrong-bg); color: var(--wrong); }
+  .tag.blank { background: var(--unanswered-bg); color: var(--unanswered); }
+  .review-q { white-space: pre-line; font-size: 14.5px; margin-bottom: 10px; }
+  .review-opt {
+    font-size: 13.5px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    white-space: pre-line;
+    display: flex;
+    gap: 8px;
+  }
+  .review-opt .l { font-weight: 700; }
+  .review-opt.correct { background: var(--correct-bg); color: var(--correct); }
+  .review-opt.user-wrong { background: var(--wrong-bg); color: var(--wrong); }
+
+  .footer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>🎓 Simulado</h1>
+    <span id="examLabel" class="pill hidden"></span>
+  </header>
+
+  <!-- SCREEN: file loader -->
+  <section id="screen-loader">
+    <div class="loader-card">
+      <h2>Selecione o arquivo JSON da prova</h2>
+      <p>Escolha um dos arquivos de questões normalizados (ex.: <code>exam1.json</code>, <code>simuladomule.json</code>) para iniciar o simulado.</p>
+      <label class="file-drop" id="dropZone">
+        <input type="file" id="fileInput" accept="application/json,.json">
+        <div class="icon">📄</div>
+        <div>Clique para escolher o arquivo, ou arraste-o aqui</div>
+        <div class="fname" id="fnameDisplay"></div>
+      </label>
+      <div class="error-msg" id="errorMsg"></div>
+    </div>
+  </section>
+
+  <!-- SCREEN: exam -->
+  <section id="screen-exam" class="hidden">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="qcard">
+      <div class="qmeta">
+        <span id="qposLabel"></span>
+        <span id="qidLabel"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div id="qimages"></div>
+      <div id="qnote" class="qnote hidden"></div>
+      <div class="alt-list" id="altList"></div>
+    </div>
+
+    <div class="qgrid" id="qgrid"></div>
+
+    <div class="nav-row">
+      <button class="btn-secondary" id="btnPrev">← Anterior</button>
+      <div class="spacer"></div>
+      <button class="btn-ghost" id="btnRestart">Trocar prova</button>
+      <button class="btn-primary" id="btnNext">Próxima →</button>
+      <button class="btn-finish" id="btnFinish">Finalizar prova ✓</button>
+    </div>
+  </section>
+
+  <!-- SCREEN: results -->
+  <section id="screen-results" class="hidden">
+    <div class="score-card">
+      <div class="score-sub">Resultado final</div>
+      <div class="score-big" id="scorePct">0%</div>
+      <div class="score-sub" id="scoreFrac"></div>
+      <div class="score-breakdown">
+        <div class="b-correct"><b id="cntCorrect">0</b>Acertos</div>
+        <div class="b-wrong"><b id="cntWrong">0</b>Erros</div>
+        <div class="b-blank"><b id="cntBlank">0</b>Em branco</div>
+      </div>
+    </div>
+
+    <div id="reviewList"></div>
+
+    <div class="footer-actions">
+      <button class="btn-secondary" id="btnReviewAgain">Revisar respostas</button>
+      <button class="btn-primary" id="btnNewExam">Fazer outra prova</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  const LETTERS = "ABCDEFGHIJ".split("");
+
+  const state = {
+    fileBaseDir: "",   // directory containing the chosen json (for relative image paths)
+    questions: [],     // normalized questions
+    answers: {},       // id -> selected label
+    current: 0,
+  };
+
+  // ---------- Elements ----------
+  const screenLoader = document.getElementById("screen-loader");
+  const screenExam = document.getElementById("screen-exam");
+  const screenResults = document.getElementById("screen-results");
+  const examLabel = document.getElementById("examLabel");
+
+  const fileInput = document.getElementById("fileInput");
+  const dropZone = document.getElementById("dropZone");
+  const fnameDisplay = document.getElementById("fnameDisplay");
+  const errorMsg = document.getElementById("errorMsg");
+
+  const progressFill = document.getElementById("progressFill");
+  const qposLabel = document.getElementById("qposLabel");
+  const qidLabel = document.getElementById("qidLabel");
+  const qtext = document.getElementById("qtext");
+  const qimages = document.getElementById("qimages");
+  const qnote = document.getElementById("qnote");
+  const altList = document.getElementById("altList");
+  const qgrid = document.getElementById("qgrid");
+
+  const btnPrev = document.getElementById("btnPrev");
+  const btnNext = document.getElementById("btnNext");
+  const btnFinish = document.getElementById("btnFinish");
+  const btnRestart = document.getElementById("btnRestart");
+
+  const scorePct = document.getElementById("scorePct");
+  const scoreFrac = document.getElementById("scoreFrac");
+  const cntCorrect = document.getElementById("cntCorrect");
+  const cntWrong = document.getElementById("cntWrong");
+  const cntBlank = document.getElementById("cntBlank");
+  const reviewList = document.getElementById("reviewList");
+  const btnReviewAgain = document.getElementById("btnReviewAgain");
+  const btnNewExam = document.getElementById("btnNewExam");
+
+  // ---------- Helpers ----------
+  function showScreen(name) {
+    screenLoader.classList.toggle("hidden", name !== "loader");
+    screenExam.classList.toggle("hidden", name !== "exam");
+    screenResults.classList.toggle("hidden", name !== "results");
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+
+  function showError(msg) {
+    errorMsg.textContent = msg;
+    errorMsg.style.display = "block";
+  }
+  function clearError() {
+    errorMsg.style.display = "none";
+    errorMsg.textContent = "";
+  }
+
+  // Normalizes an entry from either exam1.json-style or simuladomule.json-style
+  // (they already share the same shape, but we're defensive about variants)
+  function normalizeQuestion(raw, idx) {
+    const id = raw.id != null ? raw.id : (idx + 1);
+
+    let alternatives = [];
+    if (Array.isArray(raw.alternatives)) {
+      alternatives = raw.alternatives.map((a, i) => ({
+        label: a.label || LETTERS[i],
+        text: a.text != null ? a.text : "",
+      }));
+    } else if (raw.options && typeof raw.options === "object" && !Array.isArray(raw.options)) {
+      alternatives = Object.keys(raw.options).map(k => ({ label: k, text: raw.options[k] }));
+    }
+
+    let images = [];
+    if (Array.isArray(raw.images)) images = raw.images.slice();
+    else if (raw.image) images = [raw.image];
+
+    return {
+      id,
+      question: raw.question || raw.question_text || "",
+      alternatives,
+      answer: raw.answer || raw.answer_letter || null,
+      images,
+      note: raw.note || null,
+    };
+  }
+
+  function resolveImagePath(p) {
+    if (!p) return p;
+    if (/^([a-z]+:)?\/\//i.test(p) || p.startsWith("data:") || p.startsWith("/")) return p;
+    return state.fileBaseDir + p;
+  }
+
+  function loadQuestionsFromJSON(data, sourceName) {
+    if (!Array.isArray(data)) {
+      throw new Error("O JSON precisa ser uma lista (array) de questões.");
+    }
+    const qs = data.map((raw, i) => normalizeQuestion(raw, i));
+    if (qs.length === 0) {
+      throw new Error("O arquivo não contém nenhuma questão.");
+    }
+    state.questions = qs;
+    state.answers = {};
+    state.current = 0;
+    examLabel.textContent = sourceName + " · " + qs.length + " questões";
+    examLabel.classList.remove("hidden");
+    renderQuestion();
+    showScreen("exam");
+  }
+
+  function handleFile(file) {
+    clearError();
+    if (!file) return;
+    fnameDisplay.textContent = file.name;
+
+    // best-effort base dir so relative "images/..." paths in the JSON resolve
+    // against wherever this html + the json + the images folder live together.
+    state.fileBaseDir = "";
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      let data;
+      try {
+        data = JSON.parse(e.target.result);
+      } catch (err) {
+        showError("Não foi possível interpretar o arquivo como JSON válido: " + err.message);
+        return;
+      }
+      try {
+        loadQuestionsFromJSON(data, file.name);
+      } catch (err) {
+        showError(err.message);
+      }
+    };
+    reader.onerror = function () {
+      showError("Erro ao ler o arquivo selecionado.");
+    };
+    reader.readAsText(file);
+  }
+
+  fileInput.addEventListener("change", function () {
+    handleFile(fileInput.files[0]);
+  });
+
+  ["dragover", "dragenter"].forEach(evt => {
+    dropZone.addEventListener(evt, function (e) {
+      e.preventDefault();
+      dropZone.classList.add("dragover");
+    });
+  });
+  ["dragleave", "drop"].forEach(evt => {
+    dropZone.addEventListener(evt, function (e) {
+      e.preventDefault();
+      dropZone.classList.remove("dragover");
+    });
+  });
+  dropZone.addEventListener("drop", function (e) {
+    const file = e.dataTransfer.files && e.dataTransfer.files[0];
+    if (file) handleFile(file);
+  });
+
+  // ---------- Exam rendering ----------
+  function renderQuestion() {
+    const total = state.questions.length;
+    const i = state.current;
+    const q = state.questions[i];
+
+    progressFill.style.width = ((i) / total * 100) + "%";
+    qposLabel.textContent = "Questão " + (i + 1) + " de " + total;
+    qidLabel.textContent = "#" + q.id;
+
+    qtext.textContent = q.question;
+
+    qimages.innerHTML = "";
+    (q.images || []).forEach(src => {
+      const img = document.createElement("img");
+      img.className = "qimg";
+      img.src = resolveImagePath(src);
+      img.alt = "Imagem da questão " + q.id;
+      img.onerror = function () {
+        img.replaceWith(
+          Object.assign(document.createElement("div"), {
+            className: "qnote",
+            textContent: "⚠️ Não foi possível carregar a imagem: " + src +
+              " (coloque este HTML na mesma pasta do arquivo de questões e da pasta de imagens)."
+          })
+        );
+      };
+      qimages.appendChild(img);
+    });
+
+    if (q.note) {
+      qnote.textContent = "ℹ️ " + q.note;
+      qnote.classList.remove("hidden");
+    } else {
+      qnote.classList.add("hidden");
+    }
+
+    altList.innerHTML = "";
+    if (!q.alternatives.length) {
+      const empty = document.createElement("div");
+      empty.className = "alt-empty";
+      empty.textContent = "Nenhuma alternativa disponível para esta questão.";
+      altList.appendChild(empty);
+    } else {
+      q.alternatives.forEach(alt => {
+        const el = document.createElement("div");
+        el.className = "alt" + (state.answers[q.id] === alt.label ? " selected" : "");
+        el.innerHTML =
+          '<div class="radio"></div>' +
+          '<div class="label">' + escapeHtml(alt.label) + '.</div>' +
+          '<div class="text">' + escapeHtml(alt.text || "(vazio)") + '</div>';
+        el.addEventListener("click", function () {
+          state.answers[q.id] = alt.label;
+          renderQuestion();
+        });
+        altList.appendChild(el);
+      });
+    }
+
+    btnPrev.disabled = i === 0;
+    btnNext.classList.toggle("hidden", i === total - 1);
+    btnFinish.classList.toggle("hidden", i !== total - 1);
+
+    renderGrid();
+  }
+
+  function renderGrid() {
+    qgrid.innerHTML = "";
+    state.questions.forEach((q, idx) => {
+      const dot = document.createElement("div");
+      dot.className = "qdot" +
+        (idx === state.current ? " current" : "") +
+        (state.answers[q.id] != null ? " answered" : "");
+      dot.textContent = idx + 1;
+      dot.title = "Ir para a questão " + (idx + 1);
+      dot.addEventListener("click", function () {
+        state.current = idx;
+        renderQuestion();
+      });
+      qgrid.appendChild(dot);
+    });
+  }
+
+  btnPrev.addEventListener("click", function () {
+    if (state.current > 0) { state.current--; renderQuestion(); }
+  });
+  btnNext.addEventListener("click", function () {
+    if (state.current < state.questions.length - 1) { state.current++; renderQuestion(); }
+  });
+  btnFinish.addEventListener("click", finishExam);
+  btnRestart.addEventListener("click", function () {
+    if (confirm("Trocar de prova? Suas respostas atuais serão perdidas.")) {
+      resetToLoader();
+    }
+  });
+
+  // ---------- Results ----------
+  function finishExam() {
+    let correct = 0, wrong = 0, blank = 0, gradable = 0;
+    const rows = state.questions.map(q => {
+      const userAns = state.answers[q.id] != null ? state.answers[q.id] : null;
+      const hasAnswerKey = q.answer != null && q.answer !== "";
+      let status;
+      if (!hasAnswerKey) {
+        status = "ungraded";
+      } else if (userAns == null) {
+        status = "blank";
+        blank++; gradable++;
+      } else if (userAns === q.answer) {
+        status = "ok";
+        correct++; gradable++;
+      } else {
+        status = "bad";
+        wrong++; gradable++;
+      }
+      return { q, userAns, status };
+    });
+
+    const pct = gradable > 0 ? Math.round((correct / gradable) * 100) : 0;
+    scorePct.textContent = pct + "%";
+    scoreFrac.textContent = correct + " de " + gradable + " questões com gabarito conhecido" +
+      (gradable !== state.questions.length ? " (" + (state.questions.length - gradable) + " sem gabarito na fonte)" : "");
+    cntCorrect.textContent = correct;
+    cntWrong.textContent = wrong;
+    cntBlank.textContent = blank;
+
+    reviewList.innerHTML = "";
+    rows.forEach(({ q, userAns, status }, idx) => {
+      const item = document.createElement("div");
+      item.className = "review-item " + (status === "ok" ? "ok" : status === "bad" ? "bad" : status === "blank" ? "blank" : "");
+
+      let tagHtml;
+      if (status === "ok") tagHtml = '<span class="tag ok">Acertou</span>';
+      else if (status === "bad") tagHtml = '<span class="tag bad">Errou</span>';
+      else if (status === "blank") tagHtml = '<span class="tag blank">Em branco</span>';
+      else tagHtml = '<span class="tag blank">Sem gabarito</span>';
+
+      let html = '<div class="review-head"><span>Questão ' + (idx + 1) + ' · #' + escapeHtml(q.id) + '</span>' + tagHtml + '</div>';
+      html += '<div class="review-q">' + escapeHtml(q.question) + '</div>';
+
+      (q.images || []).forEach(src => {
+        html += '<img class="qimg" style="max-width:280px" src="' + escapeHtml(resolveImagePath(src)) + '" alt="Imagem da questão">';
+      });
+
+      q.alternatives.forEach(alt => {
+        let cls = "review-opt";
+        if (q.answer === alt.label) cls += " correct";
+        else if (userAns === alt.label && userAns !== q.answer) cls += " user-wrong";
+        let marker = "";
+        if (q.answer === alt.label) marker = " ✓ (correta)";
+        if (userAns === alt.label && userAns !== q.answer) marker = " ✗ (sua resposta)";
+        else if (userAns === alt.label && userAns === q.answer) marker = " ✓ (sua resposta)";
+        html += '<div class="' + cls + '"><span class="l">' + escapeHtml(alt.label) + '.</span><span>' +
+          escapeHtml(alt.text || "(vazio)") + marker + '</span></div>';
+      });
+
+      if (!q.alternatives.length) {
+        html += '<div class="alt-empty">Sem alternativas disponíveis na fonte.</div>';
+      }
+
+      item.innerHTML = html;
+      reviewList.appendChild(item);
+    });
+
+    showScreen("results");
+  }
+
+  btnReviewAgain.addEventListener("click", function () {
+    reviewList.scrollIntoView({ behavior: "smooth" });
+  });
+  btnNewExam.addEventListener("click", resetToLoader);
+
+  function resetToLoader() {
+    state.questions = [];
+    state.answers = {};
+    state.current = 0;
+    fileInput.value = "";
+    fnameDisplay.textContent = "";
+    examLabel.classList.add("hidden");
+    clearError();
+    showScreen("loader");
+  }
+
+  showScreen("loader");
+})();
+</script>
+</body>
+</html>

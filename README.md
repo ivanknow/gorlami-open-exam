@@ -61,6 +61,8 @@ O app é tolerante a pequenas variações desse formato (aceita `options` como o
 
 1. Abra `questions/exam-app.html` no navegador (duplo clique funciona; ele não precisa de servidor).
 2. Na tela inicial, selecione (ou arraste) um dos arquivos `.json` de `questions/`.
+   - Cada execução sorteia no máximo **60 questões** em ordem aleatória a partir do total disponível no JSON. Se o arquivo tiver 60 ou menos, todas entram (embaralhadas); se tiver mais, 60 são sorteadas — o cabeçalho mostra algo como "60 de 119 questões (sorteadas)".
+   - Como o sorteio é feito a cada carregamento, executar a mesma prova de novo tende a trazer uma seleção e ordem diferentes.
 3. Responda as questões navegando por "Anterior/Próxima" ou clicando nos números da grade — quadradinhos respondidos ficam destacados.
 4. Na última questão, clique em **Finalizar prova** para ver:
    - percentual de acerto e contagem de acertos / erros / em branco;
